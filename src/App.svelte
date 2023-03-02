@@ -1,10 +1,6 @@
 <script>
   import svelteLogo from "./assets/svelte.svg";
-  import Counter from "./lib/Counter.svelte";
-
-  import { getTestData, setTestData } from "./firebase.js";
-
-  const testdata = getTestData();
+  import Firebase from "./lib/Firebase.svelte";
 </script>
 
 <main>
@@ -19,11 +15,7 @@
   <h1>Cloud-DB-Test</h1>
 
   <div class="card">
-    <div>{testdata}</div>
-    <input type="text" />
-    <button on:click={() => setTestData("test")}>Click me</button>
-
-    <Counter />
+    <Firebase />
   </div>
 
   <p>

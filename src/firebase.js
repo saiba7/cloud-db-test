@@ -22,17 +22,16 @@ export async function getTestData() {
   const testCol = collection(db, "test");
   const testSnapshot = await getDocs(testCol);
   const testList = testSnapshot.docs.map((doc) => {
-    console.log(doc);
+    console.log(doc.data());
     return doc.data();
   });
   return testList;
 }
 
-//console.log(getTestData(db));
-
 export async function setTestData(dataToSet) {
+  console.log(dataToSet);
   const testColData = doc(db, "test", dataToSet);
-  setDoc(testColData, { merge: true });
+  setDoc(testColData, { content: dataToSet });
 }
 /*const colRef = collection(db, "test");
 
